@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import ArunImage from './assets/Arun.jpeg';
+import imagecss from './css/App.css'
+import Navbar from './Navbar'
+export default function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-      <h2>Tanish here</h2>
+    <div>
+     <Navbar/>
+     
     </div>
   );
 }
-
-export default App;
