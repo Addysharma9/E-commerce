@@ -9,11 +9,37 @@ import 'swiper/css/zoom';
 
 // Import required modules
 import { Navigation, Pagination, EffectCreative, Zoom, Autoplay } from 'swiper/modules';
-
-import Image from './assets/Slider1.png';
-import './css/Slider.css'; // We'll create custom styles
+import mobileslider from './assets/Slider1.png';
+import './css/Slider.css';
 
 export default () => {
+  // Array of slide content - can be expanded as needed
+  const slideContent = [
+    {
+      image: mobileslider,
+      title: "FIND CLOTHES THAT MATCHES YOUR STYLE",
+      description: "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
+      button: "Shop Now",
+      stats: [
+        { number: "200+", label: "International Brands" },
+        { number: "2,000+", label: "High-Quality Products" },
+        { number: "30,000+", label: "Happy Customers" }
+      ]
+    },
+    {
+        image: mobileslider,
+        title: "FIND CLOTHES THAT MATCHES YOUR STYLE",
+        description: "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
+        button: "Shop Now",
+        stats: [
+          { number: "200+", label: "International Brands" },
+          { number: "2,000+", label: "High-Quality Products" },
+          { number: "30,000+", label: "Happy Customers" }
+        ]
+      }
+    // Add more slide objects as needed
+  ];
+
   return (
     <div className="slider-container">
       <div className="slider-overlay"></div>
@@ -52,19 +78,27 @@ export default () => {
         modules={[Navigation, Pagination, EffectCreative, Zoom, Autoplay]}
         className="mySwiper"
       >
-        {[1, 2, 3, 4].map((i) => (
-          <SwiperSlide key={i} className="slide-item">
+        {slideContent.map((slide, index) => (
+          <SwiperSlide key={index} className="slide-item">
             <div className="swiper-zoom-container">
               <div className="image-wrapper">
-                <img src={Image} alt={`Slide ${i}`} />
+                <img src={slide.image} alt={`Slide ${index + 1}`} />
                 <div className="slide-content">
+                  <h1 className="slide-title">{slide.title}</h1>
+                  <p className="slide-description">{slide.description}</p>
+                  <button className="button-55">{slide.button}</button>
                   
+                  <div className="slide-stats">
+                    {slide.stats.map((stat, i) => (
+                      <div key={i} className="stat-item">
+                        <div className="stat-number">{stat.number}</div>
+                        <br />
+                        <div className="stat-label">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="zoom-controls">
-           
-             
             </div>
           </SwiperSlide>
         ))}
