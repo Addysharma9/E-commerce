@@ -1,0 +1,84 @@
+.mono-slider-container {
+    position: relative;
+    width: 100%;
+    background-color: #111111;
+    padding: 50px 0;
+    overflow: hidden;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+  }
+  
+  .mono-slider-content {
+    position: relative;
+    width: 100%;
+   
+  }
+  
+  .mono-slider-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+  }
+  
+  .mono-logo-item {
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .mono-logo-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .mono-logo {
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(2);
+    opacity: 0.7;
+    transition: all 0.4s ease;
+  }
+  
+  .mono-logo-item:hover .mono-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  .mono-gradient-left,
+  .mono-gradient-right {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .mono-gradient-left {
+    left: 0;
+    background: linear-gradient(to right, #111111, rgba(17, 17, 17, 0));
+  }
+  
+  .mono-gradient-right {
+    right: 0;
+    background: linear-gradient(to left, #111111, rgba(17, 17, 17, 0));
+  }
+  
+  /* Optional subtle animation for each logo */
+  @keyframes subtle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .mono-logo-item {
+    animation: subtle-float 3s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * 0.5s);
+  }
+  
+  .mono-logo-item:nth-child(1) { --i: 0; }
+  .mono-logo-item:nth-child(2) { --i: 1; }
+  .mono-logo-item:nth-child(3) { --i: 2; }
+  .mono-logo-item:nth-child(4) { --i: 3; }
+  .mono-logo-item:nth-child(5) { --i: 4; }
