@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './css/Navbar.css';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [activeTab, setActiveTab] = useState('Shop');
@@ -77,7 +78,9 @@ const NavBar = () => {
                     <span className="material-icons">search</span>
                   </button>
                   <button className="icon-button">
+                   
                     <span className="material-icons">shopping_cart</span>
+                
                   </button>
                 </>
               ) : (
@@ -179,7 +182,12 @@ const NavBar = () => {
               </div>
               
               <button className="icon-button">
+          
+             
+              <Link to="/cart">
                 <span className="material-icons">shopping_cart</span>
+              </Link>
+            
               </button>
               
               <button className="icon-button">
