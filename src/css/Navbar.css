@@ -1,5 +1,268 @@
-nav{
-    height: 150px;
-    width: 100%;
-    border: 2px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* Base Styles */
+.navbar-container {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+}
+
+.navbar-logo h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.search-input {
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Mobile Styles */
+.navbar.mobile {
+  padding: 0 15px;
+}
+
+.navbar.mobile .navbar-logo h1 {
+  font-size: 18px;
+}
+
+.navbar.mobile .navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-search-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 15px;
+  background-color: white;
+  z-index: 1001;
+  animation: slideDown 0.3s ease;
+}
+
+.mobile-search-container .search-input {
+  flex: 1;
+  height: 40px;
+  padding: 0 15px;
+  margin-right: 10px;
+}
+
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  background-color: white;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+  border-top: 1px solid #eee;
+}
+
+.mobile-menu-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+  gap: 15px;
+}
+
+.mobile-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobile-tab.active {
+  background-color: #e0e0e0;
+}
+
+.mobile-tab .material-icons {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.mobile-menu-additional {
+  border-top: 1px solid #eee;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-item .material-icons {
+  margin-right: 15px;
+}
+
+/* Desktop Styles */
+.navbar.desktop {
+  height: 70px;
+  padding: 0 40px;
+}
+
+.navbar.desktop .navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar.desktop .navbar-logo h1 {
+  font-size: 20px;
+  margin-right: 50px;
+}
+
+.desktop-tabs {
+  display: flex;
+}
+
+.desktop-tab {
+  background: none;
+  border: none;
+  padding: 0 20px;
+  height: 70px;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.desktop-tab.active {
+  font-weight: 600;
+}
+
+.desktop-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  transform-origin: bottom;
+  animation: slideIn 0.3s forwards;
+}
+
+.navbar.desktop .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.search-container .search-input {
+  width: 0;
+  padding: 0;
+  height: 40px;
+  transition: width 0.3s, padding 0.3s;
+  opacity: 0;
+}
+
+.search-container.open .search-input {
+  width: 200px;
+  padding: 0 15px;
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add pulse effect on buttons */
+.icon-button:active, .desktop-tab:active, .mobile-tab:active {
+  transform: scale(0.95);
+}
+
+/* Add smooth hover transitions on desktop items */
+.desktop-tab:hover {
+  color: #555;
+}
+
+.mobile-tab:hover {
+  background-color: #eaeaea;
+}
+
+.mobile-menu-item:hover {
+  background-color: #f9f9f9;
 }
