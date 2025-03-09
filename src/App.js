@@ -1,13 +1,13 @@
 import React from "react";
 import Slider from './Slider'
 import InfiniteSlider from "./Infiniteslider";
-import Card from './Cards'
+import NewArrivals from './NewArrivals'
 export default function App() {
  return(
   <>
   <Slider/>
   <InfiniteSlider/>
-  <Card/>
+  <NewArrivals title="New Arrivals" />
   </>
  )
 }

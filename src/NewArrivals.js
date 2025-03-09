@@ -12,11 +12,12 @@ const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  border-bottom: 1px solid grey
 `;
 
 const SectionTitle = styled(motion.h2)`
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   font-weight: 800;
   margin-bottom: 2.5rem;
   letter-spacing: 1px;
@@ -205,7 +206,9 @@ const ViewAllButton = styled(motion.button)`
     width: 100%;
   }
 `;
-
+const bordermaker = styled.div`
+border-bottom: 2px solid grey;
+`;
 // Star Rating Component
 const StarRating = ({ rating }) => {
   const fullStars = Math.floor(rating);
@@ -223,7 +226,7 @@ const StarRating = ({ rating }) => {
 };
 
 // New Arrivals Component
-const NewArrivals = () => {
+const NewArrivals = (props) => {
   const [cart, setCart] = useState([]);
   const [viewAll, setViewAll] = useState(false);
   const [addedItems, setAddedItems] = useState({});
@@ -395,13 +398,14 @@ const NewArrivals = () => {
     };
   
     return (
-      <Section>
+      <Section className='border-maker' >
         <SectionTitle
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          
         >
-          NEW ARRIVALS
+         {props.title}
         </SectionTitle>
         
         <ProductsGrid className="products-grid">
@@ -471,13 +475,13 @@ const NewArrivals = () => {
   };
   
   // App Component with Cart functionality
-  const App = () => {
+  const App = (props) => {
     const [cartItems, setCartItems] = useState([]);
     const [cartOpen, setCartOpen] = useState(false);
     
     return (
       <div className="app">
-        <NewArrivals />
+        <NewArrivals title={props.title} />
       </div>
     );
   };
