@@ -9,14 +9,16 @@ import 'swiper/css/zoom';
 
 // Import required modules
 import { Navigation, Pagination, EffectCreative, Zoom, Autoplay } from 'swiper/modules';
-import mobileslider from './assets/Slider1.png';
+import Slider1 from './assets/Slider1.png';
+import Slider2 from './assets/Slider2.jpg';
+import Slider3 from './assets/Slide3.jpg';
 import './css/Slider.css';
 
 export default () => {
   // Array of slide content - can be expanded as needed
   const slideContent = [
     {
-      image: mobileslider,
+      image: Slider1,
       title: "FIND CLOTHES THAT MATCHES YOUR STYLE",
       description: "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
       button: "Shop Now",
@@ -27,7 +29,7 @@ export default () => {
       ]
     },
     {
-        image: mobileslider,
+        image: Slider2,
         title: "FIND CLOTHES THAT MATCHES YOUR STYLE",
         description: "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
         button: "Shop Now",
@@ -36,7 +38,18 @@ export default () => {
           { number: "2,000+", label: "High-Quality Products" },
           { number: "30,000+", label: "Happy Customers" }
         ]
-      }
+      },
+    {
+        image: Slider3,
+        title: "FIND CLOTHES THAT MATCHES YOUR STYLE",
+        description: "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
+        button: "Shop Now",
+        stats: [
+          { number: "200+", label: "International Brands" },
+          { number: "2,000+", label: "High-Quality Products" },
+          { number: "30,000+", label: "Happy Customers" }
+        ]
+      },
     // Add more slide objects as needed
   ];
 

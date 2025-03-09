@@ -8,7 +8,7 @@ import "./css/Infinite.css";
 
 const logos = [logo1, logo2, logo3, logo4, logo5];
 
-export default function InfiniteSlider() {
+export default () => {
   return (
     <div className="mono-slider-container">
       <div className="mono-gradient-left"></div>
