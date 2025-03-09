@@ -81,8 +81,8 @@ git push origin main
 
 ## 📞 Contact
 For any issues or feature requests, feel free to reach out:
-📧 **Email:** your-email@example.com  
-🌐 **GitHub:** [@Addysharma9](https://github.com/yourusername)  
+📧 **Email:** codewithaddysharma@gmail.com  
+🌐 **GitHub:** [@Addysharma9](https://github.com/Addysharma9)  
 
 ---
 
