@@ -7,7 +7,8 @@ export default function App() {
   <>
   <Slider/>
   <InfiniteSlider/>
-  <NewArrivals title="New Arrivals" />
+  <NewArrivals title="NEW ARRIVALS" />
+  <NewArrivals title="TOP SELLING" />
   </>
  )
 }

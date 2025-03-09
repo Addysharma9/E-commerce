@@ -104,8 +104,8 @@ export default () => {
                   <div className="slide-stats">
                     {slide.stats.map((stat, i) => (
                       <div key={i} className="stat-item">
-                        <div className="stat-number">{stat.number}</div>
                         <br />
+                        <div className="stat-number">{stat.number}</div>
                         <div className="stat-label">{stat.label}</div>
                       </div>
                     ))}
